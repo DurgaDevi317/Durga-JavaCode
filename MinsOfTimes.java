@@ -14,27 +14,24 @@ public class MinsOfTimes {
 			int fhour = Integer.parseInt(strtoken1.nextToken());
 			int fmin = Integer.parseInt(strtoken1.nextToken());
 			int fsec = Integer.parseInt(strtoken1.nextToken());
+			String fmode = strtoken1.nextToken();
 			int ehour = Integer.parseInt(strtoken2.nextToken());
 			int emin = Integer.parseInt(strtoken2.nextToken());
 			int esec = Integer.parseInt(strtoken2.nextToken());
+			String emode = strtoken2.nextToken();
 			int hour = ehour - fhour;
-			if(strtoken1.nextToken()!=strtoken2.nextToken())
+			int min = emin - fmin;
+			if(fmode.equals(emode))
+			{
+				if(min<0)
+					min = 0 - min;
+				min = (hour * 60) - min;
+			}
+			else
 			{
 				hour =hour  + 12;
+				min =  min + (hour * 60);				
 			}
-			int min = emin - fmin + 60;
-			if(min>=60)
-			{
-				hour++;
-				min = min - 60;
-			}
-			int sec = esec - fsec + 60;
-			if(sec>=60)
-			{
-				min++;
-				sec = sec - 60;
-			}
-			min =  min + (hour * 60);
 			System.out.println(min);
 		}
 		else
