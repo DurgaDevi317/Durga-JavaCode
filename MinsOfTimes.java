@@ -17,7 +17,11 @@ public class MinsOfTimes {
 			int ehour = Integer.parseInt(strtoken2.nextToken());
 			int emin = Integer.parseInt(strtoken2.nextToken());
 			int esec = Integer.parseInt(strtoken2.nextToken());
-			int hour = ehour - fhour + 12;
+			int hour = ehour - fhour;
+			if(strtoken1.nextToken()!=strtoken2.nextToken())
+			{
+				hour =hour  + 12;
+			}
 			int min = emin - fmin + 60;
 			if(min>=60)
 			{
@@ -30,7 +34,8 @@ public class MinsOfTimes {
 				min++;
 				sec = sec - 60;
 			}
-			System.out.println(hour + ":" + min + ":" + sec);
+			min =  min + (hour * 60);
+			System.out.println(min);
 		}
 		else
 		{
