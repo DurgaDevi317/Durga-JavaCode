@@ -47,13 +47,14 @@ public class RomanToInt {
 		}
 		if(flag==0)
 		{
-		for(int i=0;i<int_array.length;i++)
+		for(int i=0;i<(int_array.length-1);i++)
 		{
 			for(int j=1; j<int_array.length; j++)
 			{
 				if(int_array[i]<int_array[j])
 				{
 					int_array[i] = 0 - int_array[i];
+					break;
 				}
 			}
 		}
