@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class StringToCamel {
 	public static void main(String[] args)
 	{
+		int flag=0;
 		String str;
 		Scanner s = new Scanner(System.in);
 		str = s.nextLine();
@@ -10,17 +11,31 @@ public class StringToCamel {
 		char_array = str.toCharArray();
 		for(int i=0; i<str.length(); i++)
 		{
-			if(char_array[i]==' ')
+			if(Character.isLetter(char_array[i]) || Character.isDigit(char_array[i] || char_array[i]=='')
 			{
-				char_array[i+1] = Character.toUpperCase(char_array[i+1]);
-				i++;
+ 				if(char_array[i]==' ')
+				{
+					char_array[i+1] = Character.toUpperCase(char_array[i+1]);
+					i++;
+				}
+				else
+				{
+					char_array[i] = Character.toLowerCase(char_array[i]);
+				}
 			}
 			else
 			{
-				char_array[i] = Character.toLowerCase(char_array[i]);
+				flag=1;
 			}
 		}
-		for(char c : char_array)
-			System.out.print(c);
+                if(flag==0)
+		{
+			for(char c : char_array)
+				System.out.print(c);
+		}
+		else
+		{
+			System.out.println("Numbers are not allowed");
+	        }
 	}
 }
