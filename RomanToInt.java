@@ -49,7 +49,7 @@ public class RomanToInt {
 		{
 		for(int i=0;i<(int_array.length-1);i++)
 		{
-			for(int j=1; j<int_array.length; j++)
+			for(int j=i; j<int_array.length; j++)
 			{
 				if(int_array[i]<int_array[j])
 				{
