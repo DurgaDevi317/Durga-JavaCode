@@ -1,3 +1,4 @@
+
 import java.util.*;
 public class IsomorphicString {
 	public static void main(String[] args)
@@ -58,6 +59,10 @@ public class IsomorphicString {
 			 {
 				 System.out.println("Not an Isomorphic");
 			 }
+		}
+		else
+		{
+			 System.out.println("String Length should be equal");
 		}
 	}
 }
