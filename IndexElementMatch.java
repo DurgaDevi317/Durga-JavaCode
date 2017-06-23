@@ -9,13 +9,32 @@ public class IndexElementMatch {
 		{
 			int_array[i] = s.nextInt();
 		}
-		Arrays.sort(int_array);
-		for(int i=0; i<array_size; i++)
+		for(int i=0;i<array_size;i++)
 		{
-			if(int_array[i] == i)
+			for(int j=i+1;j<array_size;j++)
 			{
-				System.out.print(" " + i);
+				if(int_array[i]>=int_array[j])
+				{
+					flag=1;
+					break;
+				}
 			}
+			if(flag==1)
+				break;
+		}
+		if(flag!=1)
+		{
+			for(int i=0; i<array_size; i++)
+			{
+				if(int_array[i] == i)
+				{
+					System.out.print(" " + i);
+				}
+			}
+		}
+		else
+		{
+			System.out.println(" Not Sorted or Unique " );
 		}
 	}
 }
