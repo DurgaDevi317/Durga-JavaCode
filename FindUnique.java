@@ -10,21 +10,7 @@ public class FindUnique {
 		{
 			int_array[i] = s.nextInt();
 		}
-		for(int i=0;i<array_size;i++)
-		{
-			for(int j=i+1;j<array_size;j++)
-			{
-				if(int_array[i]>=int_array[j])
-				{
-					flag=1;
-					break;
-				}
-			}
-			if(flag==1)
-				break;
-		}
-		if(flag!=1)
-		{
+		
 			int i,count=1;
 			for( i=0; i<array_size;i++ )
 			{
@@ -47,10 +33,5 @@ public class FindUnique {
 				}
 				count=1;
 			}
-		}
-		else
-		{
-			System.out.println(" Not Sorted or Unique " );
-		}
 	}
 }
